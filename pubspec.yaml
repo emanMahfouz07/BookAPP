@@ -12,6 +12,7 @@ dependencies:
   go_router: ^13.2.0
 
 dev_dependencies:
+  equatable: ^2.0.5
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
