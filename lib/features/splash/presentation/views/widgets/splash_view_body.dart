@@ -20,6 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     InitSlidingAnimation();
+
     //this is for listening to the changes in the OFFSET
     // slidingAnimeation.addListener(() {
     //   setState(() {});
