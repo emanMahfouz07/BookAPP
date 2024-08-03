@@ -1,5 +1,4 @@
 import 'package:bookly/core/utils/Widgets/custom_error_widget.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/manger/Newset%20Books%20Cubit/newset_books_cubit_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_listView_item.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_loading_indicator.dart';

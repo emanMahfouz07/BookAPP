@@ -9,9 +9,11 @@ class CustomErrorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SnackBar(
       content: Container(
-        child: Text(
-          errMessage,
-          style: Styles.textStyle18,
+        child: Center(
+          child: Text(
+            errMessage,
+            style: Styles.textStyle18,
+          ),
         ),
       ),
     );

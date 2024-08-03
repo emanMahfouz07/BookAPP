@@ -6,7 +6,6 @@ import 'package:bookly/features/home/presentation/manger/Featured%20books%20Cubi
 import 'package:bookly/features/home/presentation/manger/Newset%20Books%20Cubit/newset_books_cubit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -28,8 +27,8 @@ class BooklyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => NewsetBooksCubit(
-            getIt.get<HomeRepoImple>()..fetchNewsetBooks(),
-          ),
+            getIt.get<HomeRepoImple>(),
+          )..fetchNewsetBooks(),
         ),
       ],
       child: MaterialApp.router(

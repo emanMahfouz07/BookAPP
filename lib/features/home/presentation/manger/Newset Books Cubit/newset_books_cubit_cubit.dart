@@ -12,8 +12,14 @@ class NewsetBooksCubit extends Cubit<NewsetBooksState> {
 
   Future<void> fetchNewsetBooks() async {
     emit(NewsetBooksLoading());
+    print('Loading books...');
     var result = await homeRepo.fetchNewsetBooks();
-    result.fold((failure) => emit(NewsetBooksFailure(failure.errMessage)),
-        (books) => emit(NewsetBooksSuccess(books)));
+    result.fold((failure) {
+      print('Error fetching books: ${failure.errMessage}');
+      emit(NewsetBooksFailure(failure.errMessage));
+    }, (books) {
+      print('Books fetched successfully');
+      emit(NewsetBooksSuccess(books));
+    });
   }
 }
