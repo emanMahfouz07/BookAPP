@@ -19,13 +19,17 @@ class CustomBookImage extends StatelessWidget {
           imageUrl: imageURl,
           fit: BoxFit.fill,
           errorWidget: (context, url, error) => const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 Icons.error,
                 size: 25,
                 color: Colors.red,
               ),
-              Text('There is no data')
+              Text(
+                'There is no data',
+                textAlign: TextAlign.center,
+              )
             ],
           ),
         ),

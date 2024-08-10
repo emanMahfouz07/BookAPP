@@ -50,17 +50,24 @@ class HomeRepoImple implements HomeRepo {
     try {
       var data = await apiServices.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:Programming');
+              '/volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:Programming');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
       }
+
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
       if (e is DioException) {
-        return left(ServerFailure.fromDioError(e));
+        return left(
+          ServerFailure.fromDioError(e),
+        );
       }
-      return left(ServerFailure(e.toString()));
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 }
